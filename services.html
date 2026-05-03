@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Services — Kylene Lauron</title>
+</head>
+<body class="page-no-eh education-page services-page">
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page page-logo-bg">
+    <div class="page-header">
+      <div class="about-header">
+        <div class="about-avatar-title">
+          <div class="about-avatar"><img src="logo.jpg" alt="About logo"></div>
+          <div class="services-title-chip">
+            <h1>My <em>Services</em></h1>
+          </div>
+        </div>
+        <div class="services-intro-box">
+          <h2>From logo creation to full visual campaigns — every project is crafted with intention, precision, and a sharp eye for detail.</h2>
+        </div>
+      </div>
+      <div class="page-divider"></div>
+    </div>
+
+    <div class="services-grid">
+      <div class="card graphic-designing">
+        <div class="card-header">
+          <div class="card-icon"><i class='bx bxs-paint'></i></div>
+          <h3>Graphic Designing</h3>
+        </div>
+        <div class="card-summary-box">
+          <p class="card-summary">Logo,brand identity,and visual systems created to elevate your business with clarity,consistency,and confidence.</p>
+        </div>
+        <img src="graph.jpg" alt="Graphic Designing" class="service-card-image" />
+      </div>
+
+      <div class="card digital-art-editing">
+        <div class="card-header">
+          <div class="card-icon"><i class='bx bxs-edit'></i></div>
+          <h3>Digital Art Editing</h3>
+        </div>
+        <div class="card-summary-box">
+          <p class="card-summary">Precision editing and image refinement for strong visual storytelling and polished final assets.</p>
+        </div>
+        <img src="digital.jpg" alt="Digital Art Editing" class="service-card-image" />
+      </div>
+
+      <div class="card visual-content-creation">
+        <div class="card-header">
+          <div class="card-icon"><i class='bx bxs-folder-open'></i></div>
+          <h3>Visual Content Creation</h3>
+        </div>
+        <div class="card-summary-box">
+          <p class="card-summary">Concept-driven visuals for campaigns, social media, and marketing that feel modern, dynamic, and memorable.</p>
+        </div>
+        <img src="visual.jpg" alt="Visual Content Creation" class="service-card-image" />
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

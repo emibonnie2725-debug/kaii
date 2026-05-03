@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <title>Contact — Kylene Lauron</title>
+</head>
+<body class="page-no-eh education-page">
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page page-logo-bg">
+    <div class="page-header">
+      <div class="about-header">
+        <div class="about-avatar-title">
+          <div class="about-avatar"><img src="logo.jpg" alt="About logo"></div>
+          <h1>Get In <em>Touch</em></h1>
+        </div>
+        <h2>Have a project in mind or just want to say hello? I'd love to hear from you.</h2>
+      </div>
+      <div class="page-divider"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <!-- Info Panel -->
+      <div class="contact-info-card">
+        <h2>Let's Work Together</h2>
+        <p>Fill out the form and I'll get back to you as soon as possible. Whether it's a big project or a quick chat, I'm all ears.</p>
+
+        <div class="info-row">
+          <div class="info-row-icon"><i class='bx bxs-phone'></i></div>
+          <div>
+            <div class="info-label">Phone</div>
+            <div class="info-value">09269386612</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-row-icon"><i class='bx bxs-envelope'></i></div>
+          <div>
+            <div class="info-label">Email</div>
+            <div class="info-value">lauronkylene99@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="info-row-icon"><i class='bx bxs-map'></i></div>
+          <div>
+            <div class="info-label">Location</div>
+            <div class="info-value">Philippines</div>
+          </div>
+        </div>
+
+        <div class="contact-divider"></div>
+
+        <div class="social-row">
+          <a href="https://www.facebook.com/share/18D65qracF/" title="Facebook"><i class='bx bxl-facebook'></i></a>
+          <a href="https://www.instagram.com/kaii_xniddnis?igsh=cnlieXk3eHp5MWZh" title="Instagram"><i class='bx bxl-instagram'></i></a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Send Message ✦</button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+
+    // Initialize EmailJS
+    (function() {
+      emailjs.init('49eJMo92jx6L5jJvq'); //template_4a7a2mm
+    })();
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Collect form data
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+
+      // Send email using EmailJS
+      emailjs.send('service_272522emibonnie', 'template_4a7a2mm', formData)
+        .then(function(response) {
+          alert('Message sent successfully!');
+          document.getElementById('contactForm').reset();
+          window.location.href = 'sendmail.html'; // Redirect to success page
+        }, function(error) {
+          console.error('EmailJS error:', error);
+          alert('Failed to send message: ' + error.text);
+        });
+    });
+  </script>
+</body>
+</html>

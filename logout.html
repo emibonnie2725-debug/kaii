@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Logging Out — KLINNIUM STUDIO</title>
+</head>
+<body class="auth-page">
+
+  <!-- Logout Modal -->
+  <div id="logoutModal" class="modal" style="display: flex;">
+    <div class="modal-content">
+      <div class="modal-inner">
+        <div class="modal-check"><img src="logo.jpg" alt="KLINNIUM STUDIO logo"></div>
+        <h2>Goodbye!</h2>
+        <p>Thanks for stopping by. Come back soon.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('rememberedUser');
+    setTimeout(() => window.location.href = 'login.html', 3000);
+  </script>
+</body>
+</html>

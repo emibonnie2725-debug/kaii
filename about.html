@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>About — Kylene Lauron</title>
+</head>
+<body class="page-no-eh education-page about-page">
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page page-logo-bg">
+    <div class="page-header">
+      <div class="about-header">
+        <div class="about-avatar-title">
+          <div class="about-avatar"><img src="logo.jpg" alt="About logo"></div>
+          <h1>About <em>Me</em></h1>
+        </div>
+        <h2>A passionate visual editor with a keen eye for detail, aesthetics,
+           and the spaces where design meets storytelling.</h2>
+      </div>
+      <div class="page-divider"></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="card" data-text="I'm Kylene Mae A. Lauron, a passionate Visual Editor with a keen eye for detail and aesthetics. I specialize in transforming raw content into visually engaging and cohesive materials, ensuring every element aligns to create a seamless and impactful experience.">
+        <div class="card-icon"><i class='bx bxs-user'></i></div>
+        <h3>Who I Am</h3>
+        <p>I'm Kylene Mae A. Lauron, a passionate Visual Editor with a keen eye for detail and aesthetics. I specialize in transforming raw content into visually engaging and cohesive materials.</p>
+      </div>
+
+      <div class="card" data-text="My journey into visual editing began with a deep appreciation for how design and content work together to communicate ideas. I am committed to mastering the latest tools and techniques, keeping my work fresh, modern, and visually compelling.">
+        <div class="card-icon"><i class='bx bxs-rocket'></i></div>
+        <h3>My Journey</h3>
+        <p>My journey into visual editing began with a deep appreciation for how design and content work together to communicate ideas. I am committed to mastering the latest tools.</p>
+      </div>
+
+      <div class="card" data-text="I'm driven by the challenge of making information not only easy to understand, but beautiful to experience. Strong visual presentation enhances communication and leaves a lasting impression — my goal is to design work that inspires and connects.">
+        <div class="card-icon"><i class='bx bxs-bulb'></i></div>
+        <h3>What Drives Me</h3>
+        <p>I'm driven by the challenge of making information not only easy to understand, but beautiful to experience. Strong visual presentation enhances communication.</p>
+      </div>
+
+      <div class="card" data-text="I'm always excited to collaborate on new projects and bring visual concepts to life. Whether you have a specific design need or just want to talk, feel free to reach out — I'd love to hear from you!">
+        <div class="card-icon"><i class='bx bxs-heart'></i></div>
+        <h3>Let's Connect</h3>
+        <p>I'm always excited to collaborate on new projects and bring visual concepts to life. Whether you have a specific design need or just want to talk.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Login — KLINNIUM STUDIO</title>
+</head>
+<body class="auth-page">
+
+  <div class="auth-card">
+    <div class="auth-header">
+      <div class="auth-mark">K</div>
+      <h1>Welcome Back</h1>
+      <p>Sign in to your portfolio dashboard</p>
+    </div>
+
+    <div class="auth-body">
+      <form id="loginForm" onsubmit="handleLogin(event)">
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Enter your username" required />
+          <div class="error-message" id="usernameError"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-toggle">
+            <input type="password" id="password" placeholder="Enter your password" required />
+            <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">
+              <i class='bx bx-hide'></i>
+            </button>
+          </div>
+          <div class="error-message" id="passwordError"></div>
+        </div>
+
+        <div class="remember-row">
+          <input type="checkbox" id="remember" />
+          <label for="remember">Remember me for 30 days</label>
+        </div>
+
+        <button type="submit" class="login-btn">Sign In ✦</button>
+      </form>
+    </div>
+
+    <div class="auth-footer">
+      <p>Don't have an account? <a href="signup.html">Create one here</a></p>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-inner">
+        <div class="modal-check"><img src="logo.jpg" alt="KLINNIUM STUDIO logo"></div>
+        <h2 id="welcomeMessage">Welcome back!</h2>
+        <p>Redirecting to your dashboard…</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultUser = { Username: 'kaii', Password: 'lifesucks' };
+    if (!localStorage.getItem('users')) {
+      localStorage.setItem('users', JSON.stringify([defaultUser]));
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      ['usernameError','passwordError'].forEach(id => document.getElementById(id).style.display = 'none');
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const remember = document.getElementById('remember').checked;
+
+      if (!username) { showErr('usernameError', 'Username is required'); return; }
+      if (!password) { showErr('passwordError', 'Password is required'); return; }
+
+      const users = JSON.parse(localStorage.getItem('users'));
+      const user  = users.find(u => u.Username === username && u.Password === password);
+
+      if (user) {
+        if (remember) localStorage.setItem('rememberedUser', JSON.stringify(user));
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        document.getElementById('welcomeMessage').textContent = 'Welcome back, ' + user.Username + '!';
+        const modal = document.getElementById('successModal');
+        modal.style.display = 'flex';
+        setTimeout(() => window.location.href = 'index.html', 2000);
+      } else {
+        showErr('passwordError', 'Invalid username or password. Please try again.');
+      }
+    }
+
+    function showErr(id, msg) {
+      const el = document.getElementById(id);
+      el.textContent = msg;
+      el.style.display = 'block';
+    }
+
+    function togglePassword(fieldId, btn) {
+      const field = document.getElementById(fieldId);
+      const icon  = btn.querySelector('i');
+      if (field.type === 'password') {
+        field.type = 'text';
+        icon.classList.replace('bx-hide', 'bx-show');
+      } else {
+        field.type = 'password';
+        icon.classList.replace('bx-show', 'bx-hide');
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      const remembered = localStorage.getItem('rememberedUser');
+      if (remembered) {
+        const user = JSON.parse(remembered);
+        document.getElementById('username').value = user.Username;
+        document.getElementById('remember').checked = true;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Message Sent — Kylene Lauron</title>
+</head>
+<body>
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page">
+    <div class="container">
+      <div class="success-message">
+        <h1>Message Sent Successfully! ✦</h1>
+        <p>Thank you for reaching out. I'll get back to you soon.</p>
+        <a href="contact.html" class="back-btn">Back to Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

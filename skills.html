@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Skills — Kylene Lauron</title>
+</head>
+<body class="page-no-eh education-page">
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page page-logo-bg">
+    <div class="page-header">
+      <div class="about-header">
+        <div class="about-avatar-title">
+          <div class="about-avatar"><img src="logo.jpg" alt="About logo"></div>
+          <h1>My <em>Skills</em></h1>
+        </div>
+        <h2>A toolkit built through hands-on practice, creative curiosity, and a commitment to craft.</h2>
+      </div>
+      <div class="page-divider"></div>
+    </div>
+
+    <div class="skills-layout">
+
+      <!-- Tools & Software -->
+      <div class="skill-panel">
+        <div class="skill-panel-title">Tools &amp; Software</div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>Adobe Photoshop</span><span>88%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:88%; --d:0.1s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Adobe Illustrator</span><span>75%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:75%; --d:0.2s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Canva</span><span>95%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:95%; --d:0.3s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Figma</span><span>70%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:70%; --d:0.4s;"></div></div>
+        </div>
+      </div>
+
+      <!-- Core Competencies -->
+      <div class="skill-panel">
+        <div class="skill-panel-title">Core Competencies</div>
+
+        <div class="skill-item">
+          <div class="skill-label"><span>Visual Identity Design</span><span>90%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:90%; --d:0.15s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Typography &amp; Layout</span><span>85%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:85%; --d:0.25s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Color Theory</span><span>88%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:88%; --d:0.35s;"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-label"><span>Campaign Asset Creation</span><span>80%</span></div>
+          <div class="skill-track"><div class="skill-fill" style="width:80%; --d:0.45s;"></div></div>
+        </div>
+      </div>
+
+      <!-- Summary card spans full width -->
+      <div class="skill-summary">
+        <div class="skill-summary-icon"><i class='bx bxs-star'></i></div>
+        <div>
+          <h3>Visual Editor</h3>
+          <p>I specialize in polishing images, aligning work with brand guidelines, coordinating campaigns, optimizing digital assets, and collaborating across teams — with a sharp eye for every detail that makes visuals truly shine.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

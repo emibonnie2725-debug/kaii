@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Education — Kylene Lauron</title>
+</head>
+<body class="page-no-eh education-page">
+
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html" class="active">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="inner-page page-logo-bg">
+    <div class="page-header">
+      <div class="about-header">
+        <div class="about-avatar-title">
+          <div class="about-avatar"><img src="logo.jpg" alt="About logo"></div>
+          <h1>My <em>Education</em></h1>
+        </div>
+        <h2>The foundations built through years of study that shaped who I am as a designer and thinker.</h2>
+      </div>
+      <div class="page-divider"></div>
+    </div>
+    <div class="edu-columns">
+
+      <div class="edu-col-card">
+        <div class="edu-step-badge">01</div>
+        <div class="edu-year-row">
+          <div class="edu-year-tag">2011 – 2012</div>
+          <span class="achievements-toggle" onclick="showAchievements(0)">ACHIEVEMENTS</span>
+        </div>
+        <h3>Kindergarten</h3>
+        <p>I attended kindergarten in Davao City, Panabo, where I developed my foundational social and early academic skills — the very first steps of a lifelong love for learning.</p>
+      </div>
+
+      <div class="edu-col-card">
+        <div class="edu-step-badge">02</div>
+        <div class="edu-year-row">
+          <div class="edu-year-tag">2013 – 2019</div>
+          <span class="achievements-toggle" onclick="showAchievements(1)">ACHIEVEMENTS</span>
+        </div>
+        <h3>Elementary School</h3>
+        <p>I attended Emerico Borja Elementary School, where I built core academic skills and developed strong social foundations that shaped my collaborative and detail-oriented nature.</p>
+      </div>
+
+      <div class="edu-col-card">
+        <div class="edu-step-badge">03</div>
+        <div class="edu-year-row">
+          <div class="edu-year-tag">2019 – 2023</div>
+          <span class="achievements-toggle" onclick="showAchievements(2)">ACHIEVEMENTS</span>
+        </div>
+        <h3>Junior &amp; Senior High School</h3>
+        <p>I completed secondary education at Cabrera Altres National High School and Northeastern Mindanao Colleges, deepening academic and creative skills while discovering my passion for visual design.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span>Kylene Mae Lauron</span>. All rights reserved.</p>
+  </footer>
+
+  <!-- Achievements Modal -->
+  <div id="achievements-modal" class="achievements-modal">
+    <div class="modal-backdrop" onclick="hideAchievements()"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Achievements Gallery</h2>
+        <button class="close-btn" onclick="hideAchievements()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="achievements-content">
+          <!-- Content will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+
+    const achievementsData = [
+      {
+        title: "Kindergarten Achievements",
+        items: [
+          "Best in Class Award for Social Skills",
+          "Perfect Attendance Certificate",
+          "Art and Craft Excellence"
+        ]
+      },
+      {
+        title: "Elementary School Achievements",
+        items: [
+          "Academic Excellence in Mathematics",
+          "Science Fair Winner",
+          "Leadership in School Activities",
+          "Honorable Mention in Arts"
+        ]
+      },
+      {
+        title: "High School Achievements",
+        items: [
+          "Valedictorian Award",
+          "Best in Visual Arts",
+          "Debate Team Captain",
+          "Community Service Recognition",
+          "STEM Project Excellence"
+        ]
+      }
+    ];
+
+    function showAchievements(index) {
+      const modal = document.getElementById('achievements-modal');
+      const content = document.getElementById('achievements-content');
+      const data = achievementsData[index];
+
+      content.innerHTML = `
+        <h3>${data.title}</h3>
+        <ul>
+          ${data.items.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      `;
+
+      modal.style.display = 'flex';
+      setTimeout(() => modal.classList.add('active'), 10);
+    }
+
+    function hideAchievements() {
+      const modal = document.getElementById('achievements-modal');
+      modal.classList.remove('active');
+      setTimeout(() => modal.style.display = 'none', 300);
+    }
+  </script>
+</body>
+</html>

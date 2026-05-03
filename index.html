@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Kylene Lauron — Portfolio</title>
+</head>
+<body class="page-no-eh">
+  <header class="header">
+    <a href="index.html" class="logo"><img src="logo.jpg" alt="KLINNIUM STUDIO logo">KLINNIUM STUDIO</a>
+    <nav class="navbar">
+    <nav class="navbar">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="skills.html">Skills</a>
+      <a href="education.html">Education</a>
+      <a href="contact.html">Contact</a>
+      <a href="logout.html" class="logout-btn"><i class='bx bxs-log-out'></i> Logout</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="home-bg"></div>
+    <div class="home-content">
+      <div class="home-eyebrow">Available for work</div>
+      <h1>Hi,I'm<br><em>Kylene Mae <br>A.Lauron</em></h1>
+      <div class="home-tagline">Graphic Designer &amp; Visual Editor</div>
+      <p>I turn raw content into polished, impactful visuals — specializing in
+        brand identity, layout design, and visual storytelling that's both beautiful and strategic.</p>
+      <div class="btn-box">
+        <a href="contact.html" class="btn-primary">Hire Me ✦</a>
+        <a href="about.html" class="btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+
+    <div class="home-sci">
+      <a href="https://www.facebook.com/share/18D65qracF/" title="Facebook"><i class='bx bxl-facebook'></i></a>
+      <a href="https://www.instagram.com/kaii_xniddnis?igsh=cnlieXk3eHp5MWZh" title="Instagram"><i class='bx bxl-instagram'></i></a>
+    </div>
+  </section>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!localStorage.getItem('currentUser')) window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
